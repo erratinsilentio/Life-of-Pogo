@@ -1,0 +1,82 @@
+---
+const navItems = [
+  {
+    path: "/shop",
+    label: "Shop",
+  },
+  {
+    path: "/blog",
+    label: "Blog",
+  },
+  {
+    path: "/about",
+    label: "About",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Life of Pogo - Young Cat In The Heart of Warsaw</title>
+  </head>
+  <body class="bg-orange-50">
+    <header
+      class="flex flex-row justify-between items-center h-16 bg-orange-100 px-4"
+    >
+      <a href="/" rel="home" class="flex flex-row items-center gap-5 text-3xl">
+        <span role="img" aria-label="bengal cat">
+          <img src="/favicon.png" alt="a bengal cat, meow" class="w-16" />
+        </span>
+         Life of Pogo
+      </a>
+
+      <nav class="flex gap-7 p-5">
+        {
+          navItems.map((item) => {
+            return (
+              <a
+                href={item.path}
+                class="flex items-center justify-center box-border text-2xl h-16 w-16 border-transparent border-b-2 hover:border-black duration-200"
+              >
+                {item.label}
+              </a>
+            );
+          })
+        }
+      </nav>
+    </header>
+
+    <section class="block py-6">
+      <slot />
+    </section>
+
+    <footer class="fixed bottom-0 w-screen flex justify-center">
+      <p>
+        <a href="https://github.com/erratinsilentio"
+          >created by erratinsilentio</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  body {
+    font-family: "Rajdhani", sans-serif; /* Use 'Rajdhani' as a fallback if Lobster is unavailable */
+  }
+
+  a[rel="home"] {
+    font-family: "Lobster", sans-serif; /* Use 'Rajdhani' as a fallback if Lobster is unavailable */
+  }
+</style>
