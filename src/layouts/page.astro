@@ -32,22 +32,24 @@ const navItems = [
   </head>
   <body class="bg-orange-50">
     <header
-      class="flex flex-row justify-between items-center h-16 bg-orange-100 px-4"
+      class="flex flex-row justify-between items-center h-16 bg-orange-100 px-2 sm:px-4"
     >
-      <a href="/" rel="home" class="flex flex-row items-center gap-5 text-3xl">
-        <span role="img" aria-label="bengal cat">
-          <img src="/favicon.png" alt="a bengal cat, meow" class="w-16" />
-        </span>
+      <a
+        href="/"
+        rel="home"
+        class="flex flex-row items-center gap-5 text-xl sm:text-3xl"
+      >
+        <img src="/favicon.png" alt="a bengal cat, meow" class="w-16" />
          Life of Pogo
       </a>
 
-      <nav class="flex gap-7 p-5">
+      <nav class="flex gap-7 p-2 sm:p-5">
         {
           navItems.map((item) => {
             return (
               <a
                 href={item.path}
-                class="flex items-center justify-center box-border text-2xl h-16 w-16 border-transparent border-b-2 hover:border-black duration-200"
+                class="flex items-center justify-center box-border sm:text-2xl sm:h-16 sm:w-16 border-transparent border-b-2 hover:border-black duration-200"
               >
                 {item.label}
               </a>
