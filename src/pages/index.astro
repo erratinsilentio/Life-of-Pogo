@@ -2,6 +2,7 @@
 import Layout from "../layouts/default.astro";
 import hero from "../images/hero.jpg";
 import { Image } from "astro:assets";
+import BlogSnippet from "../components/blog-snippet.astro";
 ---
 
 <Layout>
@@ -23,6 +24,8 @@ import { Image } from "astro:assets";
       >
     </div>
   </section>
+
+  <BlogSnippet client:only="astro" />
 </Layout>
 
 <style>
