@@ -1,8 +1,19 @@
 ---
 import { getCollection } from "astro:content";
 
+function formatCurrency(amount: number) {
+	return new Intl.NumberFormat('en-US', {
+		currency: 'usd',
+		style: 'currency',
+	}).format(amount);
+}
+
 const blogPosts = await getCollection("blog");
-console.log(blogPosts);
+
+interface Props {
+    count: number
+}
+const {count = Infinity} = Astro.props
 ---
 
 <section></section>
