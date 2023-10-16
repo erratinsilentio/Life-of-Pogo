@@ -2,7 +2,7 @@
 import Layout from "../layouts/default.astro";
 import hero from "../images/hero.jpg";
 import { Image } from "astro:assets";
-import BlogSnippet from "../components/blog-snippet.astro";
+import BlogSnippet from "../components/blog-snippet.tsx";
 ---
 
 <Layout>
@@ -25,7 +25,7 @@ import BlogSnippet from "../components/blog-snippet.astro";
     </div>
   </section>
 
-  <BlogSnippet />
+  <BlogSnippet client:only="react" />
 </Layout>
 
 <style>
